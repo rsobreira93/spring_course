@@ -1,0 +1,25 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/person
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 3,
+    "firstName": "Romulo",
+    "lastName": "Pereira",
+    "address": "Pau dos ferros - RN - 1993",
+    "gender": "MALE"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
