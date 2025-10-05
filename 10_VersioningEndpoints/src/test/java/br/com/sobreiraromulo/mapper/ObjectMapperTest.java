@@ -1,6 +1,6 @@
 package br.com.sobreiraromulo.mapper;
 
-import br.com.sobreiraromulo.data.dto.PersonDTO;
+import br.com.sobreiraromulo.data.dto.v1.PersonDTO;
 import br.com.sobreiraromulo.mapper.mocks.MockPerson;
 import br.com.sobreiraromulo.model.Person;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,7 +1,9 @@
 package br.com.sobreiraromulo.services;
 
-import br.com.sobreiraromulo.data.dto.PersonDTO;
+import br.com.sobreiraromulo.data.dto.v1.PersonDTO;
+import br.com.sobreiraromulo.data.dto.v2.PersonDTOV2;
 import br.com.sobreiraromulo.exceptions.ResourceNotFoudException;
+import br.com.sobreiraromulo.mapper.custom.PersonMapper;
 import br.com.sobreiraromulo.model.Person;
 import br.com.sobreiraromulo.repositories.PersonRepository;
 import org.slf4j.Logger;
@@ -24,12 +26,23 @@ public class PersonServices {
     @Autowired
     PersonRepository personRepository;
 
+    @Autowired
+    PersonMapper personMapper;
+
     public PersonDTO create(PersonDTO person) {
         logger.info("Create one person");
 
         Person entity = parseObject(person, Person.class);
 
         return parseObject(personRepository.save(entity), PersonDTO.class);
+    }
+
+    public PersonDTOV2 create(PersonDTOV2 person) {
+        logger.info("Create one person v2");
+
+        Person entity = personMapper.convertDTOToEntity(person);
+
+        return personMapper.convertEntityToDTO(personRepository.save(entity));
     }
 
     public PersonDTO update(PersonDTO person) {

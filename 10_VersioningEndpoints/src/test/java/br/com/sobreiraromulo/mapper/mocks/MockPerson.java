@@ -1,7 +1,7 @@
 package br.com.sobreiraromulo.mapper.mocks;
 
 
-import br.com.sobreiraromulo.data.dto.PersonDTO;
+import br.com.sobreiraromulo.data.dto.v1.PersonDTO;
 import br.com.sobreiraromulo.model.Person;
 
 import java.util.ArrayList;

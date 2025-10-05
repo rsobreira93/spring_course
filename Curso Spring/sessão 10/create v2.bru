@@ -1,0 +1,25 @@
+meta {
+  name: create v2
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8080/person/v2
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "firstName": "Romulo",
+    "lastName": "Pereira",
+    "birthDay": "2000-12-31",
+    "address": "Pau dos ferros - RN",
+    "gender": "MALE"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
