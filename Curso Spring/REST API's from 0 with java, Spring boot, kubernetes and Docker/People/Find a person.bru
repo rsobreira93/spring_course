@@ -1,0 +1,15 @@
+meta {
+  name: Find a person
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/person/v1/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}

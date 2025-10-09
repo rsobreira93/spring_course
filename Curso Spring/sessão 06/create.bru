@@ -6,31 +6,30 @@ meta {
 
 post {
   url: http://localhost:8080/api/person/v1
-  body: text
+  body: json
   auth: inherit
 }
 
 headers {
-  Content-Type: application/yaml
-  Accept: application/yaml
+  ~Content-Type: application/yaml
+  ~Accept: application/yaml
 }
 
 body:json {
-  ---
-  id: 1
-  firstName: "Romulo"
-  lastName: "Sobreira"
-  address: "Pau dos ferros - RN"
-  gender: "MALE"
-  
+  {
+    "firstName": "Romulo",
+    "lastName": "Sobreira",
+    "address": "Pau dos ferros - RN",
+    "gender": "MALE"
+  }
 }
 
 body:text {
-  firstName: "Romulo"
-  lastName: "Sobreira"
-  address: "Pau dos ferros - RN"
-  gender: "MALE"
-  
+      "id": 1,
+      "firstName": "Romulo",
+      "lastName": "Sobreira",
+      "address": "Pau dos ferros - RN",
+      "gender": "MALE",
 }
 
 settings {

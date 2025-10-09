@@ -1,0 +1,15 @@
+meta {
+  name: Finds a Book
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/book/v1/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}

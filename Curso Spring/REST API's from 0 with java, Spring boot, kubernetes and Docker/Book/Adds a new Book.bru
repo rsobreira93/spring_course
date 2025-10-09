@@ -1,0 +1,22 @@
+meta {
+  name: Adds a new Book
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/book/v1
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "author": "",
+    "launchDate": "",
+    "price": "",
+    "title": "",
+    "_links": {}
+  }
+}

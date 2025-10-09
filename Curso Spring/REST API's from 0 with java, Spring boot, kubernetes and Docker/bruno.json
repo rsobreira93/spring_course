@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "REST API's from 0 with java, Spring boot, kubernetes and Docker",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
