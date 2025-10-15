@@ -1,0 +1,19 @@
+meta {
+  name: disable a person
+  type: http
+  seq: 6
+}
+
+patch {
+  url: http://localhost:8080/api/person/v1/1
+  body: none
+  auth: inherit
+}
+
+headers {
+  ~Accept: application/yaml
+}
+
+settings {
+  encodeUrl: true
+}

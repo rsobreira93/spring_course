@@ -1,19 +1,34 @@
-package br.com.sobreiraromulo.integrationtestes.dto;
+package br.com.sobreiraromulo.model;
+
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PersonDTO implements Serializable {
+
+@Entity
+@Table(name = "person")
+public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "first_name", nullable = false, length = 80)
     private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 80)
     private String lastName;
+
+    @Column(nullable = false, length = 100)
     private String address;
+
+    @Column(nullable = false, length = 6)
     private String gender;
 
-    public PersonDTO(Long id, String firstName, String lastName, String address, String gender) {
+    public Person(Long id, String firstName, String lastName, String address, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,7 +36,7 @@ public class PersonDTO implements Serializable {
         this.gender = gender;
     }
 
-    public PersonDTO() {
+    public Person() {
     }
 
     public Long getId() {
@@ -67,7 +82,7 @@ public class PersonDTO implements Serializable {
     @Override
     public boolean equals(Object object) {
         if (object == null || getClass() != object.getClass()) return false;
-        PersonDTO person = (PersonDTO) object;
+        Person person = (Person) object;
         return Objects.equals(id, person.id) && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(address, person.address) && Objects.equals(gender, person.gender);
     }
 
