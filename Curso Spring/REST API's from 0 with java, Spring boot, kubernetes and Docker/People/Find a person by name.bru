@@ -1,0 +1,23 @@
+meta {
+  name: Find a person by name
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/person/v1/findPeopleByName/and?page=0&size=12&direction=asc
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 0
+  size: 12
+  direction: asc
+}
+
+headers {
+  ~Origin: https://www.youtube.com
+  ~Origin: http://localhost:8080
+  ~Origin: https://www.instagram.com
+}

@@ -5,7 +5,13 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/api/person/v1
+  url: {{baseUrl}}/api/person/v1?page=3&size=12&direction=asc
   body: none
   auth: inherit
+}
+
+params:query {
+  page: 3
+  size: 12
+  direction: asc
 }
