@@ -1,0 +1,22 @@
+meta {
+  name: Download a file copy
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/file/v1/downloadFile/rs.jpeg
+  body: multipartForm
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "author": "",
+    "launchDate": "",
+    "price": "",
+    "title": "",
+    "_links": {}
+  }
+}

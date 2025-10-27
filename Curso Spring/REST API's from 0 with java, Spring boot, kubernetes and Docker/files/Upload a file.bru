@@ -1,0 +1,26 @@
+meta {
+  name: Upload a file
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/api/file/v1/uploadFile
+  body: multipartForm
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "author": "",
+    "launchDate": "",
+    "price": "",
+    "title": "",
+    "_links": {}
+  }
+}
+
+body:multipart-form {
+  file: @file(/home/romulo/Downloads/rssssss.jpeg)
+}

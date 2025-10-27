@@ -1,0 +1,26 @@
+meta {
+  name: Upload multiple files
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/file/v1/uploadMultipleFiles
+  body: multipartForm
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "author": "",
+    "launchDate": "",
+    "price": "",
+    "title": "",
+    "_links": {}
+  }
+}
+
+body:multipart-form {
+  files: @file(/home/romulo/Downloads/rs.jpeg|/home/romulo/Downloads/rssssss.jpeg|/home/romulo/Downloads/xd.jpeg)
+}
