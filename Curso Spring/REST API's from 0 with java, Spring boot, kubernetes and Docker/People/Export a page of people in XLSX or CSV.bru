@@ -1,0 +1,22 @@
+meta {
+  name: Export a page of people in XLSX or CSV
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/api/person/v1/exportPage?page=3&size=12&direction=asc
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 3
+  size: 12
+  direction: asc
+}
+
+headers {
+  Accept: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+  ~Accept: text/csv
+}

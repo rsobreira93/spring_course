@@ -1,0 +1,26 @@
+meta {
+  name: import people by file
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/person/v1/massCreation
+  body: multipartForm
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "firstName": "",
+    "lastName": "",
+    "address": "",
+    "gender": "",
+    "_links": {}
+  }
+}
+
+body:multipart-form {
+  file: @file(/home/romulo/Downloads/brisanet-net-br-d1-api-5g-d1-64457796ff-n7kqw-api-5g-d1.log)
+}
