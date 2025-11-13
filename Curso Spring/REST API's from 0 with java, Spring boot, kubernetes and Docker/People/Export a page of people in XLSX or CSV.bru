@@ -5,18 +5,19 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/api/person/v1/exportPage?page=3&size=12&direction=asc
+  url: {{baseUrl}}/api/person/v1/exportPage?page=0&size=12&direction=asc
   body: none
   auth: inherit
 }
 
 params:query {
-  page: 3
+  page: 0
   size: 12
   direction: asc
 }
 
 headers {
-  Accept: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+  Accept: application/pdf
   ~Accept: text/csv
+  ~Accept: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 }

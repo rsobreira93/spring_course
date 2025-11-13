@@ -1,0 +1,18 @@
+meta {
+  name: export a person
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/api/person/v1/export/5
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/pdf
+  ~Origin: https://www.youtube.com
+  ~Origin: http://localhost:8080
+  ~Origin: https://www.instagram.com
+}
