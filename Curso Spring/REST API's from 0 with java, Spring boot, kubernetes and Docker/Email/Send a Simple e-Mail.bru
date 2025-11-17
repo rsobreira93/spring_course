@@ -1,0 +1,24 @@
+meta {
+  name: Send a Simple e-Mail
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/email/v1
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "to": "sobreiraromuloes@gmail.com",
+    "subject": "test",
+    "body": "testando fofo lol"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

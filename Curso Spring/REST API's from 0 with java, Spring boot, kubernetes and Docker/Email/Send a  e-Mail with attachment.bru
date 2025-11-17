@@ -1,0 +1,35 @@
+meta {
+  name: Send a  e-Mail with attachment
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/api/email/v1/withAttachment
+  body: multipartForm
+  auth: inherit
+}
+
+body:json {
+  {
+    "to": "sobreiraromuloes@gmail.com",
+    "subject": "test",
+    "body": "testando fofo lol"
+  }
+}
+
+body:multipart-form {
+  emailRequest: '''
+    {
+      "to": "sobreiraromuloes@gmail.com",
+      "subject": "test",
+      "body": "testando fofo lol"
+    }
+  '''
+  attachment: @file(/home/romulo/Imagens/Capturas de tela/Captura de tela de 2025-11-12 06-21-55.png)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
