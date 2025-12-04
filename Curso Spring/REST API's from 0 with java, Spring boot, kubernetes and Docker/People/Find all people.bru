@@ -7,11 +7,19 @@ meta {
 get {
   url: {{baseUrl}}/api/person/v1?page=3&size=12&direction=asc
   body: none
-  auth: inherit
+  auth: bearer
 }
 
 params:query {
   page: 3
   size: 12
   direction: asc
+}
+
+headers {
+  ~Authorization: Bearer {{token}}
+}
+
+auth:bearer {
+  token: {{token}}
 }

@@ -7,11 +7,15 @@ meta {
 get {
   url: {{baseUrl}}/api/book/v1?page=0&size=12&direction=asc
   body: none
-  auth: inherit
+  auth: none
 }
 
 params:query {
   page: 0
   size: 12
   direction: asc
+}
+
+headers {
+  Authorization: Bearer {{token}}
 }

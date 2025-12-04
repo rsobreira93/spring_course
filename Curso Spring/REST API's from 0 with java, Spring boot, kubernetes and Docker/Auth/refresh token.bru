@@ -1,0 +1,33 @@
+meta {
+  name: refresh token
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/auth/refresh/romulo
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{refreshToken}}
+}
+
+body:json {
+  {
+    "username": "romulo",
+    "password": "admin123"
+  }
+}
+
+script:post-response {
+  let data = res.body;
+  bru.setEnvVar("token", res.body.accessToken);
+  bru.setEnvVar('refreshToken', res.body.refreshToken);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
