@@ -5,8 +5,8 @@ cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.instagram.com
 
 file:
-  upload-dir: /home/runner/work/spring_course/uploadDir
-
+#  upload-dir: /home/runner/work/spring_course/uploadDir
+  upload-dir: ${java.io.tmpdir}/uploadDir
 security:
   jwt:
     token:
