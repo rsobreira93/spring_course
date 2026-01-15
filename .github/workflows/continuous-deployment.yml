@@ -23,12 +23,12 @@ jobs:
         uses: actions/setup-java@v5
         with:
           java-version: '21'
-          distribution: 'adopt'
+          distribution: 'temurin'
 #          cache: maven
 
       - name: Build Application .jar
         working-directory: ./28_DockerizingOurApp/rest-api
-        run: mvn clean package -DskipTests
+        run: mvn clean package
 
       - name: Docker Compose Build
         working-directory: ./28_DockerizingOurApp
