@@ -1,0 +1,51 @@
+services:
+  db:
+    image: mysql:9.1.0
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: admin123
+      MYSQL_DATABASE: spring
+    ports:
+      - "3308:3306"
+    expose:
+      - 3306
+    networks:
+      - network
+  rest-with-spring-boot:
+    image: rsobreiraes/rest-with-spring-boot
+    restart: always
+    build: ./rest-api
+    working_dir: /rest-api
+    environment:
+      TZ: America/Sao_Paulo
+      SPRING.DATASOURCE.URL: jdbc:mysql://db:3306/spring?useTimezone=true&serverTimezone=UTC
+      SPRING.DATASOURCE.USERNAME: root
+      SPRING.DATASOURCE.PASSWORD: admin123
+    command: mvn spring-boot:run
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    networks:
+      - network
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - partainer_data:/data
+    networks:
+      - network
+
+volumes:
+  partainer_data:
+
+networks:
+  network:
+    driver: bridge

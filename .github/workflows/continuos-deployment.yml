@@ -1,7 +1,0 @@
-name: Contiuos Integration and Delivery with Github Actions
-
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
