@@ -28,7 +28,7 @@ jobs:
 
       - name: Build Application .jar
         working-directory: ./28_DockerizingOurApp/rest-api
-        run: mvn clean package
+        run: mvn clean package -Dspring.profiles.active=test
 
       - name: Docker Compose Build
         working-directory: ./28_DockerizingOurApp
